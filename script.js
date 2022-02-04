@@ -19,6 +19,7 @@ function userSetup() {
 }
 
 function clear() {
+  //clear resultat liste
   results.innerHTML = "";
 }
 
@@ -33,12 +34,17 @@ function clickCalculate() {
   } else if (operator === "div") {
     resultValue = firstNumber.value / secondNumber.value;
   }
+  //tjekker om checkbox er valgt
   if (checkbox.checked === true) {
+    //Tjek hvor mange decimaler
     rounding = parseInt(document.querySelector("#decimals").value);
+    //rund op
     resultValue = resultValue.toFixed(rounding);
   }
-  firstNumber.value = resultValue;
 
+  //Få resultat til at stå i første nummer
+  firstNumber.value = resultValue;
+  //Tilføj til liste med resultater med scrol
   result = document.createElement("li");
   result.textContent = resultValue;
   results.appendChild(result);
