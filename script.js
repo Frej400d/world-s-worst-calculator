@@ -14,7 +14,12 @@ const checkbox = document.querySelector("#doround");
 document.addEventListener("DOMContentLoaded", userSetup);
 
 function userSetup() {
+  document.querySelector("#clear").addEventListener("click", clear);
   calculateButton.addEventListener("click", clickCalculate);
+}
+
+function clear() {
+  results.innerHTML = "";
 }
 
 function clickCalculate() {
